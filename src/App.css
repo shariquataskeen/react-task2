@@ -1,0 +1,98 @@
+/* Base styles (apply to all devices) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(270deg, #ff758c, #6a11cb, #2575fc, #ff7eb3);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+.fade-in-text {
+  font-size: 4rem;
+  color: black;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
+               0 0 30px rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  animation: textEffect 4s ease-out forwards;
+}
+
+@keyframes textEffect {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-60deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1) rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Media Queries */
+
+@media  (max-width: 850px) {
+  .fade-in-text {
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+                 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+  .background {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .fade-in-text {
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+                 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+  .background {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+  .fade-in-text {
+    font-size: 1.5rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6),
+                 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+  .background {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .fade-in-text {
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+                 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+
+  .background {
+    padding: 10px;
+  }
+}
